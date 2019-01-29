@@ -7,16 +7,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeTracker.Core", "TimeTra
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Timesheet", "Timesheet", "{8E1E07E7-D9E3-43DD-B253-2065CBA774CA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeTracker.Timesheet.Server", "TimeTracker.Timesheet\TimeTracker.Timesheet.Server\TimeTracker.Timesheet.Server.csproj", "{6E2576F0-1AAB-419E-A746-A2E28574B93D}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeTracker.Timesheet.App", "TimeTracker.Timesheet\TimeTracker.Timesheet.App\TimeTracker.Timesheet.App.csproj", "{2F9B42A4-5B06-49CA-8A2D-FC00A1DEE385}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{13F155EF-4411-4770-9E74-6CC22D04E066}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTracker.Timesheet.Server", "TimeTracker.Timesheet\TimeTracker.Timesheet.Server\TimeTracker.Timesheet.Server.csproj", "{BD6DC591-1D67-448B-B087-6762596639EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTracker.Timesheet.App", "TimeTracker.Timesheet\TimeTracker.Timesheet.App\TimeTracker.Timesheet.App.csproj", "{E1CD09AB-8CD7-4D4E-9F68-F943A92B5FBD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,21 +28,21 @@ Global
 		{5339F0E2-CCD2-4286-8100-6A1CD3ED72B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5339F0E2-CCD2-4286-8100-6A1CD3ED72B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5339F0E2-CCD2-4286-8100-6A1CD3ED72B0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6E2576F0-1AAB-419E-A746-A2E28574B93D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6E2576F0-1AAB-419E-A746-A2E28574B93D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6E2576F0-1AAB-419E-A746-A2E28574B93D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6E2576F0-1AAB-419E-A746-A2E28574B93D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2F9B42A4-5B06-49CA-8A2D-FC00A1DEE385}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2F9B42A4-5B06-49CA-8A2D-FC00A1DEE385}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2F9B42A4-5B06-49CA-8A2D-FC00A1DEE385}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2F9B42A4-5B06-49CA-8A2D-FC00A1DEE385}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD6DC591-1D67-448B-B087-6762596639EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD6DC591-1D67-448B-B087-6762596639EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD6DC591-1D67-448B-B087-6762596639EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD6DC591-1D67-448B-B087-6762596639EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1CD09AB-8CD7-4D4E-9F68-F943A92B5FBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1CD09AB-8CD7-4D4E-9F68-F943A92B5FBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1CD09AB-8CD7-4D4E-9F68-F943A92B5FBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1CD09AB-8CD7-4D4E-9F68-F943A92B5FBD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{6E2576F0-1AAB-419E-A746-A2E28574B93D} = {8E1E07E7-D9E3-43DD-B253-2065CBA774CA}
-		{2F9B42A4-5B06-49CA-8A2D-FC00A1DEE385} = {8E1E07E7-D9E3-43DD-B253-2065CBA774CA}
+		{BD6DC591-1D67-448B-B087-6762596639EA} = {8E1E07E7-D9E3-43DD-B253-2065CBA774CA}
+		{E1CD09AB-8CD7-4D4E-9F68-F943A92B5FBD} = {8E1E07E7-D9E3-43DD-B253-2065CBA774CA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9228537D-723D-4CEF-97B4-25F229803F75}
