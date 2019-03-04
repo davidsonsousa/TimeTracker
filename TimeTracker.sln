@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28407.52
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeTracker.Core", "TimeTracker.Core\TimeTracker.Core.csproj", "{5339F0E2-CCD2-4286-8100-6A1CD3ED72B0}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Timesheet", "Timesheet", "{8E1E07E7-D9E3-43DD-B253-2065CBA774CA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{13F155EF-4411-4770-9E74-6CC22D04E066}"
@@ -14,9 +12,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTracker.Timesheet.Server", "TimeTracker.Timesheet\TimeTracker.Timesheet.Server\TimeTracker.Timesheet.Server.csproj", "{BD6DC591-1D67-448B-B087-6762596639EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeTracker.Timesheet.Server", "TimeTracker.Timesheet\TimeTracker.Timesheet.Server\TimeTracker.Timesheet.Server.csproj", "{BD6DC591-1D67-448B-B087-6762596639EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTracker.Timesheet.App", "TimeTracker.Timesheet\TimeTracker.Timesheet.App\TimeTracker.Timesheet.App.csproj", "{E1CD09AB-8CD7-4D4E-9F68-F943A92B5FBD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeTracker.Timesheet.App", "TimeTracker.Timesheet\TimeTracker.Timesheet.App\TimeTracker.Timesheet.App.csproj", "{E1CD09AB-8CD7-4D4E-9F68-F943A92B5FBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTracker", "TimeTracker\TimeTracker.csproj", "{D7796286-37EC-49A0-975C-E4F3E7FC56FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,10 +24,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5339F0E2-CCD2-4286-8100-6A1CD3ED72B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5339F0E2-CCD2-4286-8100-6A1CD3ED72B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5339F0E2-CCD2-4286-8100-6A1CD3ED72B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5339F0E2-CCD2-4286-8100-6A1CD3ED72B0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BD6DC591-1D67-448B-B087-6762596639EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BD6DC591-1D67-448B-B087-6762596639EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD6DC591-1D67-448B-B087-6762596639EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -36,6 +32,10 @@ Global
 		{E1CD09AB-8CD7-4D4E-9F68-F943A92B5FBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1CD09AB-8CD7-4D4E-9F68-F943A92B5FBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1CD09AB-8CD7-4D4E-9F68-F943A92B5FBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7796286-37EC-49A0-975C-E4F3E7FC56FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7796286-37EC-49A0-975C-E4F3E7FC56FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7796286-37EC-49A0-975C-E4F3E7FC56FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7796286-37EC-49A0-975C-E4F3E7FC56FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
