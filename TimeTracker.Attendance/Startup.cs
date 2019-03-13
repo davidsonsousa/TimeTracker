@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using TimeTracker.Attendance.Components;
-using TimeTracker.Attendance.Services;
+using TimeTracker.Services;
 
 namespace TimeTracker.Attendance
 {

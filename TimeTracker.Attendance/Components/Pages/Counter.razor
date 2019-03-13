@@ -3,14 +3,16 @@
 <h1>Counter</h1>
 
 <p>Current count: @currentCount</p>
+<p>Step: <input type="text" bind-value-oninput="@step" /></p>
 
 <button class="btn btn-primary" onclick="@IncrementCount">Click me</button>
 
 @functions {
     int currentCount = 0;
+    int step = 1;
 
     void IncrementCount()
     {
-        currentCount++;
+        currentCount += step;
     }
 }

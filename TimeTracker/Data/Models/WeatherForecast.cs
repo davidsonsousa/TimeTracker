@@ -1,6 +1,6 @@
 using System;
 
-namespace TimeTracker.Attendance.Services
+namespace TimeTracker.Data.Models
 {
     public class WeatherForecast
     {

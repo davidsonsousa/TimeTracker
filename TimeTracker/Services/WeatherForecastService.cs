@@ -1,8 +1,9 @@
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using TimeTracker.Data.Models;
 
-namespace TimeTracker.Attendance.Services
+namespace TimeTracker.Services
 {
     public class WeatherForecastService
     {
