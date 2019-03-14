@@ -11,6 +11,11 @@ namespace TimeTracker.Data
 {
     public class TimeTrackerContext : DbContext
     {
+        public TimeTrackerContext(DbContextOptions<TimeTrackerContext> options) : base(options)
+        {
+            //Database.SetInitializer(new CmsEngineInitializer());
+        }
+
         public DbSet<Attendance> Attendances { get; set; }
         public DbSet<Calendar> Calendars { get; set; }
         public DbSet<Holiday> Holidays { get; set; }
