@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TimeTracker.Data.Models
 {
-    public class Calendar
+    public class Calendar : BaseModel
     {
         #region Relationship
 
