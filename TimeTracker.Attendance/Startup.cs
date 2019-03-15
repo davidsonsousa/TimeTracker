@@ -43,6 +43,7 @@ namespace TimeTracker.Attendance
 
             services.AddRazorComponents();
 
+            services.AddTransient<Service>();
             services.AddSingleton<WeatherForecastService>();
         }
 
