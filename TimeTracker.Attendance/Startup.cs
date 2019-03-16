@@ -44,7 +44,6 @@ namespace TimeTracker.Attendance
             services.AddRazorComponents();
 
             services.AddTransient<Service>();
-            services.AddSingleton<WeatherForecastService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
