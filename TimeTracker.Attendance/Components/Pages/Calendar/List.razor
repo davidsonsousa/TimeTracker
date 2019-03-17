@@ -1,0 +1,31 @@
+﻿@page "/calendar/list"
+
+@inherits ListBase
+
+
+@if (calendars != null && calendars.Count() > 0)
+{
+    <h2>List (@calendars.Count())</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Home offices</th>
+                <th>Vacations</th>
+                <th>Sick days</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var calendar in calendars)
+            {
+                <tr>
+                    <td>@calendar.Name</td>
+                    <td>@calendar.HomeOfficeCapacity</td>
+                    <td>@calendar.VacationCapacity</td>
+                    <td>@calendar.SickDaysCapacity</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
