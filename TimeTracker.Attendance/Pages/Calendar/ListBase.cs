@@ -1,13 +1,10 @@
 ﻿using Microsoft.AspNetCore.Components;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using TimeTracker.Data.ViewModels;
 using TimeTracker.Services;
 
-namespace TimeTracker.Attendance.Components.Pages.Calendar
+namespace TimeTracker.Attendance.Pages.Calendar
 {
     public class ListBase : ComponentBase
     {
