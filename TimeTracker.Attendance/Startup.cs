@@ -1,18 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using TimeTracker.Attendance.Components;
 using TimeTracker.Data;
 using TimeTracker.Services;
-using Microsoft.EntityFrameworkCore;
 
 namespace TimeTracker.Attendance
 {
@@ -38,11 +31,8 @@ namespace TimeTracker.Attendance
             // Add Unit of Work
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-            services.AddMvc()
-                    .AddNewtonsoftJson();
-
-            services.AddRazorComponents();
-
+            services.AddRazorPages();
+            services.AddServerSideBlazor();
             services.AddTransient<Service>();
         }
 
@@ -60,12 +50,15 @@ namespace TimeTracker.Attendance
             }
 
             app.UseHttpsRedirection();
+
             app.UseStaticFiles();
 
-            app.UseRouting(routes =>
+            app.UseRouting();
+
+            app.UseEndpoints(endpoints =>
             {
-                routes.MapRazorPages();
-                routes.MapComponentHub<App>("app");
+                endpoints.MapBlazorHub();
+                endpoints.MapFallbackToPage("/_Host");
             });
         }
     }
