@@ -1,0 +1,28 @@
+﻿@page "/holiday/list"
+
+@inherits ListBase
+
+<h1>Holiday</h1>
+
+@if (holidays != null && holidays.Count() > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var holiday in holidays)
+            {
+                <tr>
+                    <td>@holiday.Name</td>
+                    <td>@holiday.Description</td>
+                    <td>@holiday.Date</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
