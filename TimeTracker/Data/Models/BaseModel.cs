@@ -13,7 +13,7 @@ namespace TimeTracker.Data.Models
         {
             get
             {
-                return (Id == 0 && VanityId == Guid.Empty);
+                return Id == 0 && VanityId == Guid.Empty;
             }
         }
         #endregion

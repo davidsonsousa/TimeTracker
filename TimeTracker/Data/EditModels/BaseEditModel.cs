@@ -1,9 +1,5 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TimeTracker.Data.EditModels
 {
@@ -13,7 +9,7 @@ namespace TimeTracker.Data.EditModels
         {
             get
             {
-                return (Id == 0 && VanityId == Guid.Empty);
+                return Id == 0 && VanityId == Guid.Empty;
             }
         }
 
@@ -23,10 +19,7 @@ namespace TimeTracker.Data.EditModels
 
         public override string ToString()
         {
-            var jsonResult = new JObject(
-                                        new JProperty("Id", Id),
-                                        new JProperty("VanityId", VanityId)
-                                    );
+            var jsonResult = new JObject(new JProperty("Id", Id), new JProperty("VanityId", VanityId));
             return jsonResult.ToString();
         }
     }

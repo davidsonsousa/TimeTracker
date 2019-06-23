@@ -4,8 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 using TimeTracker.Data.Models;
 
 namespace TimeTracker.Data.Repositories
@@ -41,7 +39,7 @@ namespace TimeTracker.Data.Repositories
 
         public IQueryable<T> Get(Expression<Func<T, bool>> filter = null, int count = 0)
         {
-            var query = GetAll(q => q.IsDeleted == false);
+            IQueryable<T> query = GetAll(q => q.IsDeleted == false);
 
             if (filter != null)
             {

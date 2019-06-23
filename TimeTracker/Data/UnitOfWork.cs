@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TimeTracker.Data.Models;
 using TimeTracker.Data.Repositories;
 
@@ -12,14 +10,14 @@ namespace TimeTracker.Data
     public class UnitOfWork : IUnitOfWork
     {
         private readonly TimeTrackerContext _ctx;
-        private Dictionary<Type, object> _repositories;
+        private readonly Dictionary<Type, object> _repositories;
         private bool _disposed;
 
-        public IRepository<Attendance> Attendances { get { return this.GetRepository<Attendance>(); } }
-        public IRepository<Calendar> Calendars { get { return this.GetRepository<Calendar>(); } }
-        public IRepository<Holiday> Holidays { get { return this.GetRepository<Holiday>(); } }
-        public IRepository<Project> Projects { get { return this.GetRepository<Project>(); } }
-        public IRepository<Ticket> Tickets { get { return this.GetRepository<Ticket>(); } }
+        public IRepository<Attendance> Attendances { get { return GetRepository<Attendance>(); } }
+        public IRepository<Calendar> Calendars { get { return GetRepository<Calendar>(); } }
+        public IRepository<Holiday> Holidays { get { return GetRepository<Holiday>(); } }
+        public IRepository<Project> Projects { get { return GetRepository<Project>(); } }
+        public IRepository<Ticket> Tickets { get { return GetRepository<Ticket>(); } }
 
         public UnitOfWork(TimeTrackerContext context)
         {
@@ -32,7 +30,9 @@ namespace TimeTracker.Data
         public IRepository<TEntity> GetRepository<TEntity>() where TEntity : BaseModel
         {
             if (_repositories.Keys.Contains(typeof(TEntity)))
+            {
                 return _repositories[typeof(TEntity)] as IRepository<TEntity>;
+            }
 
             // TODO: Make it flexible so it accepts other types of repository (example: ADO.NET, XML, JSON, etc.)
             var repository = new EfRepository<TEntity>(_ctx);
@@ -43,7 +43,9 @@ namespace TimeTracker.Data
         public IRepositoryMany<TEntity> GetRepositoryMany<TEntity>() where TEntity : class
         {
             if (_repositories.Keys.Contains(typeof(TEntity)))
+            {
                 return _repositories[typeof(TEntity)] as IRepositoryMany<TEntity>;
+            }
 
             // TODO: Make it flexible so it accepts other types of repository (example: ADO.NET, XML, JSON, etc.)
             var repository = new EfRepositoryMany<TEntity>(_ctx);

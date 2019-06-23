@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TimeTracker.Data.EditModels;
 using TimeTracker.Data.Models;
 using TimeTracker.Data.ViewModels;
@@ -31,7 +29,7 @@ namespace TimeTracker.Services
 
         public IEditModel SetupCalendarEditModel(int id)
         {
-            var item = _unitOfWork.Calendars.GetById(id);
+            Calendar item = _unitOfWork.Calendars.GetById(id);
 
             return new CalendarEditModel
             {
@@ -47,7 +45,7 @@ namespace TimeTracker.Services
 
         public IEditModel SetupCalendarEditModel(Guid id)
         {
-            var item = _unitOfWork.Calendars.GetById(id);
+            Calendar item = _unitOfWork.Calendars.GetById(id);
 
             return new CalendarEditModel
             {

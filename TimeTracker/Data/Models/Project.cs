@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TimeTracker.Data.Models
+﻿namespace TimeTracker.Data.Models
 {
     public class Project : BaseModel
     {

@@ -28,7 +28,7 @@ namespace TimeTracker.Services
 
         public IEditModel SetupHolidayEditModel(int id)
         {
-            var item = _unitOfWork.Holidays.GetById(id);
+            Holiday item = _unitOfWork.Holidays.GetById(id);
 
             return new HolidayEditModel
             {
@@ -42,7 +42,7 @@ namespace TimeTracker.Services
 
         public IEditModel SetupHolidayEditModel(Guid id)
         {
-            var item = _unitOfWork.Holidays.GetById(id);
+            Holiday item = _unitOfWork.Holidays.GetById(id);
 
             return new HolidayEditModel
             {

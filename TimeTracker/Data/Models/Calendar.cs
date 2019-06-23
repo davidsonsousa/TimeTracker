@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace TimeTracker.Data.Models
 {
@@ -8,6 +6,7 @@ namespace TimeTracker.Data.Models
     {
         #region Relationship
 
+        public virtual Company Company { get; set; }
         public virtual ICollection<Ticket> Tickets { get; set; }
         public virtual ICollection<Holiday> Holidays { get; set; }
 
