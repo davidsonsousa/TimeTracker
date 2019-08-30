@@ -11,14 +11,13 @@ namespace TimeTracker.Data
     {
         public TimeTrackerContext(DbContextOptions<TimeTrackerContext> options) : base(options)
         {
-            //Database.SetInitializer(new CmsEngineInitializer());
+            //Database.SetInitializer(new TimeTrackerInitializer());
         }
 
         public DbSet<Attendance> Attendances { get; set; }
-        public DbSet<Calendar> Calendars { get; set; }
+        public DbSet<Branch> Calendars { get; set; }
         public DbSet<Holiday> Holidays { get; set; }
         public DbSet<Project> Projects { get; set; }
-        public DbSet<Ticket> Tickets { get; set; }
 
         public override int SaveChanges()
         {

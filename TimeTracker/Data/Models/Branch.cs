@@ -2,15 +2,12 @@
 
 namespace TimeTracker.Data.Models
 {
-    public class Calendar : BaseModel
+    public class Branch : BaseModel
     {
-        #region Relationship
-
         public virtual Company Company { get; set; }
-        public virtual ICollection<Ticket> Tickets { get; set; }
         public virtual ICollection<Holiday> Holidays { get; set; }
-
-        #endregion
+        public virtual ICollection<Team> Teams { get; set; }
+        public virtual ICollection<TicketType> TicketTypes { get; set; }
 
         public string Name { get; set; }
         public string Description { get; set; }

@@ -6,7 +6,7 @@ namespace TimeTracker.Data.Models
     {
         #region Relationship
 
-        public virtual Calendar Calendar { get; set; }
+        public virtual Branch Calendar { get; set; }
 
         #endregion
 

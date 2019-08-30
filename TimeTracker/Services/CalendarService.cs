@@ -29,7 +29,7 @@ namespace TimeTracker.Services
 
         public IEditModel SetupCalendarEditModel(int id)
         {
-            Calendar item = _unitOfWork.Calendars.GetById(id);
+            Branch item = _unitOfWork.Calendars.GetById(id);
 
             return new CalendarEditModel
             {
@@ -45,7 +45,7 @@ namespace TimeTracker.Services
 
         public IEditModel SetupCalendarEditModel(Guid id)
         {
-            Calendar item = _unitOfWork.Calendars.GetById(id);
+            Branch item = _unitOfWork.Calendars.GetById(id);
 
             return new CalendarEditModel
             {
@@ -70,7 +70,7 @@ namespace TimeTracker.Services
             try
             {
                 var item = (CalendarEditModel)editModel;
-                var calendar = new Calendar
+                var calendar = new Branch
                 {
                     Id = item.Id,
                     VanityId = item.VanityId,

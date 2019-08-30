@@ -2,9 +2,10 @@
 
 namespace TimeTracker.Data.Models
 {
-    public class Company : BaseModel
+    public class TicketType : BaseModel
     {
+        public virtual ICollection<Branch> Branches { get; set; }
+
         public string Name { get; set; }
-        public ICollection<Branch> Branches { get; set; }
     }
 }

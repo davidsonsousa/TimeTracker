@@ -7,7 +7,6 @@ namespace TimeTracker.Data.Models
 {
     public class BaseModel
     {
-        #region Not mapped
         [NotMapped]
         public bool IsNew
         {
@@ -16,7 +15,6 @@ namespace TimeTracker.Data.Models
                 return Id == 0 && VanityId == Guid.Empty;
             }
         }
-        #endregion
 
         public bool IsDeleted { get; set; }
 
@@ -25,15 +23,11 @@ namespace TimeTracker.Data.Models
 
         public Guid VanityId { get; set; }
 
-        #region For "quick log" purposes
-
         public DateTime DateCreated { get; set; }
         public DateTime DateModified { get; set; }
 
         public string UserCreated { get; set; }
         public string UserModified { get; set; }
-
-        #endregion
 
         public override string ToString()
         {

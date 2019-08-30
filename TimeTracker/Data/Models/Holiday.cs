@@ -4,11 +4,7 @@ namespace TimeTracker.Data.Models
 {
     public class Holiday : BaseModel
     {
-        #region Relationship
-
-        public virtual Calendar Calendar { get; set; }
-
-        #endregion
+        public virtual Branch Calendar { get; set; }
 
         public string Name { get; set; }
         public string Description { get; set; }

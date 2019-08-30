@@ -14,10 +14,9 @@ namespace TimeTracker.Data
         private bool _disposed;
 
         public IRepository<Attendance> Attendances { get { return GetRepository<Attendance>(); } }
-        public IRepository<Calendar> Calendars { get { return GetRepository<Calendar>(); } }
+        public IRepository<Branch> Calendars { get { return GetRepository<Branch>(); } }
         public IRepository<Holiday> Holidays { get { return GetRepository<Holiday>(); } }
         public IRepository<Project> Projects { get { return GetRepository<Project>(); } }
-        public IRepository<Ticket> Tickets { get { return GetRepository<Ticket>(); } }
 
         public UnitOfWork(TimeTrackerContext context)
         {
