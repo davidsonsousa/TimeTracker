@@ -14,10 +14,14 @@ namespace TimeTracker.Data
             //Database.SetInitializer(new TimeTrackerInitializer());
         }
 
-        public DbSet<Attendance> Attendances { get; set; }
-        public DbSet<Branch> Calendars { get; set; }
+        public DbSet<Company> Companies { get; set; }
+        public DbSet<Branch> Branches { get; set; }
         public DbSet<Holiday> Holidays { get; set; }
+        public DbSet<Team> Teams { get; set; }
         public DbSet<Project> Projects { get; set; }
+        public DbSet<TicketType> TicketTypes { get; set; }
+
+        // TODO: Add Attendance, Timesheet and User
 
         public override int SaveChanges()
         {
