@@ -5,9 +5,9 @@ using System.Linq.Expressions;
 
 namespace TimeTracker.Data.Repositories
 {
-    public interface IRepository<T> : IDisposable where T : class
+    public interface IRepository<TEntity> where TEntity : class
     {
-        IQueryable<T> GetAll(Expression<Func<T, bool>> filter = null);
+        IEnumerable<TEntity> GetAll();
 
         /// <summary>
         /// Gets item based on condition and includes extra table
@@ -15,7 +15,7 @@ namespace TimeTracker.Data.Repositories
         /// <param name="filter"></param>
         /// <param name="count"></param>
         /// <returns></returns>
-        IQueryable<T> Get(Expression<Func<T, bool>> filter = null, int count = 0);
+        IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> filter = null, int count = 0);
 
         /// <summary>
         /// Gets items based on condition for read-only
@@ -23,28 +23,47 @@ namespace TimeTracker.Data.Repositories
         /// <param name="filter"></param>
         /// <param name="count"></param>
         /// <returns></returns>
-        IEnumerable<T> GetReadOnly(Expression<Func<T, bool>> filter = null);
+        IEnumerable<TEntity> GetReadOnly(Expression<Func<TEntity, bool>> filter = null);
 
-        T GetById(int id);
+        TEntity GetById(int id);
 
-        T GetById(Guid id);
+        TEntity GetById(Guid id);
 
         /// <summary>
         /// Inserts a record
         /// </summary>
         /// <param name="entity"></param>
-        void Insert(T entity);
+        void Insert(TEntity entity);
+
+        /// <summary>
+        /// Inserts multiple records
+        /// </summary>
+        /// <param name="entities"></param>
+        void InsertRange(IEnumerable<TEntity> entities);
 
         /// <summary>
         /// Updates record
         /// </summary>
         /// <param name="entity"></param>
-        void Update(T entity);
+        void Update(TEntity entity);
+
+        /// <summary>
+        /// Updates multiple records
+        /// </summary>
+        /// <param name="entities"></param>
+        void UpdateRange(IEnumerable<TEntity> entities);
 
         /// <summary>
         /// Deletes record from database
         /// </summary>
         /// <param name="entity"></param>
-        void Delete(T entity);
+        void Delete(TEntity entity);
+
+        /// <summary>
+        /// Deletes multiple records
+        /// </summary>
+        /// <param name="entities"></param>
+        void DeleteRange(IEnumerable<TEntity> entities);
+
     }
 }

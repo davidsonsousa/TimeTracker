@@ -8,152 +8,120 @@ using TimeTracker.Data.Models;
 
 namespace TimeTracker.Data.Repositories
 {
-    internal class EfRepository<T> : IRepository<T> where T : BaseModel
+    internal class EfRepository<TEntity> : IRepository<TEntity> where TEntity : BaseModel
     {
-        private readonly TimeTrackerContext _context;
-        private readonly DbSet<T> _dbSet;
-        private bool _disposed;
+        protected readonly DbContext Context;
 
-        public EfRepository()
+        public EfRepository(DbContext context)
         {
-
+            Context = context ?? throw new ArgumentNullException("Repository - Context");
         }
 
-        public EfRepository(TimeTrackerContext context)
+        public IEnumerable<TEntity> GetAll()
         {
-            _context = context ?? throw new ArgumentNullException("Repository - Context");
-            _dbSet = context.Set<T>();
+            return GetValidRecords().ToList();
         }
 
-        public IQueryable<T> GetAll(Expression<Func<T, bool>> filter = null)
+        public IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> filter = null, int count = 0)
         {
-            IQueryable<T> query = _dbSet;
+            IQueryable<TEntity> recods = GetValidRecords();
 
             if (filter != null)
             {
-                query = query.Where(filter);
-            }
-
-            return query;
-        }
-
-        public IQueryable<T> Get(Expression<Func<T, bool>> filter = null, int count = 0)
-        {
-            IQueryable<T> query = GetAll(q => q.IsDeleted == false);
-
-            if (filter != null)
-            {
-                query = query.Where(filter);
+                recods = recods.Where(filter);
             }
 
             if (count > 0)
             {
-                query = query.Take(count);
+                recods = recods.Take(count);
             }
 
-            return query;
+            return recods;
         }
 
-        public IEnumerable<T> GetReadOnly(Expression<Func<T, bool>> filter = null)
+        public IEnumerable<TEntity> GetReadOnly(Expression<Func<TEntity, bool>> filter = null)
         {
-            IQueryable<T> query = _dbSet;
+            IQueryable<TEntity> records = GetValidRecords();
 
             if (filter != null)
             {
-                query = query.Where(filter);
+                records = records.Where(filter);
             }
 
-            return query.ToList();
+            return records.ToList();
         }
 
-        public T GetById(int id)
+        public TEntity GetById(int id)
         {
             return Get(q => q.Id == id).SingleOrDefault();
         }
 
-        public T GetById(Guid id)
+        public TEntity GetById(Guid id)
         {
             return Get(q => q.VanityId == id).SingleOrDefault();
         }
 
-        public void Insert(T entity)
+        public void Insert(TEntity entity)
         {
             if (entity != null)
             {
-                _dbSet.Add(entity);
+                Context.Set<TEntity>().Add(entity);
             }
         }
 
-        public void InsertMany(IEnumerable<T> entities)
+        public void InsertRange(IEnumerable<TEntity> entities)
         {
             if (entities != null)
             {
-                _dbSet.AddRange(entities);
+                Context.Set<TEntity>().AddRange(entities);
             }
         }
 
-        public void Update(T entity)
+        public void Update(TEntity entity)
         {
             if (entity != null)
             {
                 Attach(entity);
-                _context.Entry(entity).State = EntityState.Modified;
+                Context.Entry(entity).State = EntityState.Modified;
             }
         }
 
-        public void UpdateMany(IEnumerable<T> entities)
+        public void UpdateRange(IEnumerable<TEntity> entities)
         {
             if (entities != null)
             {
-                _context.UpdateRange(entities);
+                Context.UpdateRange(entities);
             }
         }
 
-        public void Delete(T entity)
+        public void Delete(TEntity entity)
         {
             if (entity != null)
             {
-                _context.Remove(entity);
+                Context.Remove(entity);
             }
         }
 
-        public void DeleteMany(IEnumerable<T> entities)
+        public void DeleteRange(IEnumerable<TEntity> entities)
         {
             if (entities != null)
             {
-                _context.RemoveRange(entities);
+                Context.RemoveRange(entities);
             }
         }
 
-        private void Attach(T entity)
+        private void Attach(TEntity entity)
         {
-            EntityEntry dbEntityEntry = _context.Entry(entity);
+            EntityEntry dbEntityEntry = Context.Entry(entity);
             if (dbEntityEntry.State == EntityState.Detached)
             {
-                _dbSet.Attach(entity);
+                Context.Set<TEntity>().Attach(entity);
             }
         }
 
-        #region Dispose
-
-        protected virtual void Dispose(bool disposing)
+        private IQueryable<TEntity> GetValidRecords()
         {
-            if (!_disposed)
-            {
-                if (disposing)
-                {
-                    _context.Dispose();
-                }
-            }
-            _disposed = true;
+            return Context.Set<TEntity>().Where(q => q.IsDeleted == false);
         }
-
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
-        #endregion
     }
 }
