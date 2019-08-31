@@ -6,9 +6,8 @@ namespace TimeTracker.Data
 {
     public interface IUnitOfWork : IDisposable
     {
-        IRepository<Attendance> Attendances { get; }
-        IRepository<Branch> Calendars { get; }
-        IRepository<Holiday> Holidays { get; }
+        IBranchRepository Branches { get; }
+        IHolidayRepository Holidays { get; }
         IRepository<Project> Projects { get; }
 
         /// <summary>

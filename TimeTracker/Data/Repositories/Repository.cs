@@ -8,7 +8,7 @@ using TimeTracker.Data.Models;
 
 namespace TimeTracker.Data.Repositories
 {
-    internal class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseModel
+    public class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseModel
     {
         protected readonly DbContext Context;
 
