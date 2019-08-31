@@ -8,6 +8,7 @@ namespace TimeTracker.Data
     {
         IBranchRepository Branches { get; }
         IHolidayRepository Holidays { get; }
+        ITicketTypeRepository TicketTypes { get; }
         IRepository<Project> Projects { get; }
 
         /// <summary>
