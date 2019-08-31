@@ -34,7 +34,7 @@ namespace TimeTracker.Data
             }
 
             // TODO: Make it flexible so it accepts other types of repository (example: ADO.NET, XML, JSON, etc.)
-            var repository = new EfRepository<TEntity>(_ctx);
+            var repository = new Repository<TEntity>(_ctx);
             _repositories.Add(typeof(TEntity), repository);
             return repository;
         }
@@ -47,7 +47,7 @@ namespace TimeTracker.Data
             }
 
             // TODO: Make it flexible so it accepts other types of repository (example: ADO.NET, XML, JSON, etc.)
-            var repository = new EfRepositoryMany<TEntity>(_ctx);
+            var repository = new RepositoryMany<TEntity>(_ctx);
             _repositories.Add(typeof(TEntity), repository);
             return repository;
         }

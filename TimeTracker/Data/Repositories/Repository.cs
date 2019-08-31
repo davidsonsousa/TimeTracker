@@ -8,11 +8,11 @@ using TimeTracker.Data.Models;
 
 namespace TimeTracker.Data.Repositories
 {
-    internal class EfRepository<TEntity> : IRepository<TEntity> where TEntity : BaseModel
+    internal class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseModel
     {
         protected readonly DbContext Context;
 
-        public EfRepository(DbContext context)
+        public Repository(DbContext context)
         {
             Context = context ?? throw new ArgumentNullException("Repository - Context");
         }

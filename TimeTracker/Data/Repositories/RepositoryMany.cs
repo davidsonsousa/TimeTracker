@@ -4,18 +4,18 @@ using System.Collections.Generic;
 
 namespace TimeTracker.Data.Repositories
 {
-    internal class EfRepositoryMany<T> : IRepositoryMany<T> where T : class
+    internal class RepositoryMany<T> : IRepositoryMany<T> where T : class
     {
         private readonly TimeTrackerContext _context;
         private readonly DbSet<T> _dbSet;
         private bool _disposed;
 
-        public EfRepositoryMany()
+        public RepositoryMany()
         {
 
         }
 
-        public EfRepositoryMany(TimeTrackerContext context)
+        public RepositoryMany(TimeTrackerContext context)
         {
             _context = context ?? throw new ArgumentNullException("Repository - Context");
             _dbSet = context.Set<T>();
