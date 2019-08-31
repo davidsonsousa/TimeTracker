@@ -14,16 +14,18 @@ namespace TimeTracker.Data
         private bool _disposed;
 
         public IBranchRepository Branches { get; private set; }
+        public ITeamRepository Teams { get; private set; }
         public IHolidayRepository Holidays { get; private set; }
         public ITicketTypeRepository TicketTypes { get; private set; }
         public IRepository<Project> Projects { get { return GetRepository<Project>(); } }
 
-        public UnitOfWork(TimeTrackerContext context, IBranchRepository branchRepository, IHolidayRepository holidayRepository,
-                          ITicketTypeRepository ticketTypeRepository)
+        public UnitOfWork(TimeTrackerContext context, IBranchRepository branchRepository, ITeamRepository teamRepository,
+                          IHolidayRepository holidayRepository, ITicketTypeRepository ticketTypeRepository)
         {
             _ctx = context;
 
             Branches = branchRepository;
+            Teams = teamRepository;
             Holidays = holidayRepository;
             TicketTypes = ticketTypeRepository;
 
