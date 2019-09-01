@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace TimeTracker.Data.Models
+namespace TimeTracker.Data.Entities
 {
     public class Company : BaseModel
     {

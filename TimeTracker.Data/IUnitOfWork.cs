@@ -1,5 +1,5 @@
 ﻿using System;
-using TimeTracker.Data.Models;
+using TimeTracker.Data.Entities;
 using TimeTracker.Data.Repositories;
 
 namespace TimeTracker.Data

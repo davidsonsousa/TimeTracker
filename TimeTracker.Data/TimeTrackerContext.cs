@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using TimeTracker.Data.Models;
+using TimeTracker.Data.Entities;
 
 namespace TimeTracker.Data
 {

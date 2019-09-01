@@ -3,7 +3,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace TimeTracker.Data.Models
+namespace TimeTracker.Data.Entities
 {
     public class BaseModel
     {

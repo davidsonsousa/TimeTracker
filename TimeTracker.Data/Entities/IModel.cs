@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TimeTracker.Data.Models
+namespace TimeTracker.Data.Entities
 {
     public interface IModel
     {

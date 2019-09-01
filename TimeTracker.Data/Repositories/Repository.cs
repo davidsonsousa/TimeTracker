@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using TimeTracker.Data.Models;
+using TimeTracker.Data.Entities;
 
 namespace TimeTracker.Data.Repositories
 {

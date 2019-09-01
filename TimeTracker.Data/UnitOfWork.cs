@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using TimeTracker.Data.Models;
+using TimeTracker.Data.Entities;
 using TimeTracker.Data.Repositories;
 
 namespace TimeTracker.Data
