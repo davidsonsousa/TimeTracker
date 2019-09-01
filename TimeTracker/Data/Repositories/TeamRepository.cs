@@ -5,14 +5,14 @@ using TimeTracker.Data.Models;
 
 namespace TimeTracker.Data.Repositories
 {
-    public class TeamsRepository : Repository<Team>, ITeamRepository
+    public class TeamRepository : Repository<Team>, ITeamRepository
     {
         public TimeTrackerContext TimeTrackerContext
         {
             get { return Context as TimeTrackerContext; }
         }
 
-        public TeamsRepository(DbContext context) : base(context)
+        public TeamRepository(DbContext context) : base(context)
         {
         }
 
