@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeTracker.Common", "TimeT
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeTracker.Infrastructure", "TimeTracker.Infrastructure\TimeTracker.Infrastructure.csproj", "{D0B91126-2C3C-4F14-AE4C-8D3A9DB5F48F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TImeTracker.Timesheet.Domain", "TImeTracker.Timesheet.Domain\TImeTracker.Timesheet.Domain.csproj", "{01BBD002-3F1C-4E36-B71A-829C34B1DAD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeTracker.Timesheet.Domain", "TimeTracker.Timesheet.Domain\TimeTracker.Timesheet.Domain.csproj", "{01BBD002-3F1C-4E36-B71A-829C34B1DAD0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
