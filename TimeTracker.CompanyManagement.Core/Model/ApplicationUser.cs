@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 
-namespace TimeTracker.CompanyManagement.Core.Interfaces.Model
+namespace TimeTracker.CompanyManagement.Core.Model
 {
     public class User : IdentityUser
     {

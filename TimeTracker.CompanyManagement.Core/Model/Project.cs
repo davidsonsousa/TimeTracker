@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using TimeTracker.CompanyManagement.Core.Interfaces;
 
-namespace TimeTracker.CompanyManagement.Core.Interfaces.Model
+namespace TimeTracker.CompanyManagement.Core.Model
 {
     public class Project : IEntity
     {

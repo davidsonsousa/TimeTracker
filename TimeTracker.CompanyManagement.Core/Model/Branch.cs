@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
+using TimeTracker.CompanyManagement.Core.Interfaces;
 using TimeTracker.SharedKernel.ValueObjects;
 
-namespace TimeTracker.CompanyManagement.Core.Interfaces.Model
+namespace TimeTracker.CompanyManagement.Core.Model
 {
-    public class Branch
+    public class Branch : IEntity
     {
         public int Id { get; set; }
         public string Name { get; set; }
