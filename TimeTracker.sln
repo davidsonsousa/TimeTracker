@@ -82,4 +82,7 @@ Global
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9228537D-723D-4CEF-97B4-25F229803F75}
 	EndGlobalSection
+	GlobalSection(NDepend) = preSolution
+		Project = ".\TimeTracker.ndproj"
+	EndGlobalSection
 EndGlobal
