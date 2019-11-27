@@ -11,6 +11,9 @@ namespace TimeTracker.Timesheet.Core.Model.TimesheetAggregate
         public DateTime EventDate { get; private set; }
         public TimesheetEventType EventType { get; private set; }
 
+        // Not persisted
+        public TrackingState State { get; set; }
+
         public TimesheetEvent(Guid id) : base(id)
         {
 

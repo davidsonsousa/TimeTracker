@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using TimeTracker.SharedKernel;
+using TimeTracker.SharedKernel.Enums;
 
 namespace TimeTracker.Timesheet.Core.Model.TimesheetAggregate
 {
@@ -10,17 +11,17 @@ namespace TimeTracker.Timesheet.Core.Model.TimesheetAggregate
         public int BranchId { get; private set; }
         public DateTime EventDate { get; private set; }
 
-        private List<TimesheetEvent> timeSheetEvents;
+        private List<TimesheetEvent> _timesheetEvents;
 
         public IEnumerable<TimesheetEvent> TimesheetEvents
         {
             get
             {
-                return timeSheetEvents.AsEnumerable();
+                return _timesheetEvents.AsEnumerable();
             }
             private set
             {
-                timeSheetEvents = (List<TimesheetEvent>)value;
+                _timesheetEvents = (List<TimesheetEvent>)value;
             }
         }
 
@@ -35,6 +36,28 @@ namespace TimeTracker.Timesheet.Core.Model.TimesheetAggregate
         public Timesheet() : base(Guid.NewGuid())
         {
 
+        }
+
+        public TimesheetEvent AddNewTimesheetEvent(TimesheetEvent timesheetEvent)
+        {
+            if (_timesheetEvents.Any(a => a.Id == timesheetEvent.Id))
+            {
+                throw new ArgumentException("Cannot add duplicate timesheet event.", nameof(TimesheetEvent));
+            }
+
+            timesheetEvent.State = TrackingState.Added;
+            _timesheetEvents.Add(timesheetEvent);
+
+            return timesheetEvent;
+        }
+
+        public void DeleteTimesheetEvent(TimesheetEvent timesheetEvent)
+        {
+            var timesheetEventToDelete = _timesheetEvents.Where(q => q.Id == timesheetEvent.Id).FirstOrDefault();
+            if (timesheetEventToDelete != null)
+            {
+                timesheetEventToDelete.State = TrackingState.Deleted;
+            }
         }
     }
 }
