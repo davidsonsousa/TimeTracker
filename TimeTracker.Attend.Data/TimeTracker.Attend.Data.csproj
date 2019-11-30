@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TimeTracker.Attendance.Core\TimeTracker.Attendance.Core.csproj" />
+    <ProjectReference Include="..\TimeTracker.Attend.Core\TimeTracker.Attend.Core.csproj" />
   </ItemGroup>
 
 </Project>

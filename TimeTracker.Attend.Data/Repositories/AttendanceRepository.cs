@@ -1,7 +1,7 @@
 ﻿using System;
-using TimeTracker.Attendance.Core.Interfaces;
+using TimeTracker.Attend.Core.Interfaces;
 
-namespace TimeTracker.Attendance.Data.Repositories
+namespace TimeTracker.Attend.Data.Repositories
 {
     public class AttendanceRepository : IAttendanceRepository, IDisposable
     {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace TimeTracker.Attendance.Data
+namespace TimeTracker.Attend.Data
 {
     public class AttendanceContext : DbContext
     {

@@ -2,7 +2,7 @@
 using TimeTracker.SharedKernel;
 using TimeTracker.SharedKernel.ValueObjects;
 
-namespace TimeTracker.Attendance.Core.Model.AttendanceAggregate
+namespace TimeTracker.Attend.Core.Model.AttendAggregate
 {
     public class AttendanceEvent : Entity<Guid>
     {

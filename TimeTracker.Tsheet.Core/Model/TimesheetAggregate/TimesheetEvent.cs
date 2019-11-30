@@ -2,7 +2,7 @@
 using TimeTracker.SharedKernel;
 using TimeTracker.SharedKernel.Enums;
 
-namespace TimeTracker.Timesheet.Core.Model.TimesheetAggregate
+namespace TimeTracker.Tsheet.Core.Model.TimesheetAggregate
 {
     public class TimesheetEvent : Entity<Guid>
     {

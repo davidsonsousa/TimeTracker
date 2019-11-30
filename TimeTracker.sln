@@ -21,19 +21,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SharedKernel", "SharedKerne
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Attendance", "Attendance", "{6ED55510-9E5C-40D7-9298-CBA3C65521BB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeTracker.Attendance.Core", "TimeTracker.Attendance.Core\TimeTracker.Attendance.Core.csproj", "{9504F59F-3D92-46A7-9793-0CF51D15DAE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeTracker.Attend.Core", "TimeTracker.Attend.Core\TimeTracker.Attend.Core.csproj", "{9504F59F-3D92-46A7-9793-0CF51D15DAE5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeTracker.SharedKernel", "TimeTracker.SharedKernel\TimeTracker.SharedKernel.csproj", "{8CA5B42D-4CFD-4B03-9310-711B4690F467}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{80906BEA-8727-4FC3-AC68-C6E9E6C877D8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeTracker.Attendance.Data", "TimeTracker.Attendance.Data\TimeTracker.Attendance.Data.csproj", "{85B5AF35-8759-4D44-8EA3-B813D72F0CFC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeTracker.Attend.Data", "TimeTracker.Attend.Data\TimeTracker.Attend.Data.csproj", "{85B5AF35-8759-4D44-8EA3-B813D72F0CFC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Timesheet", "Timesheet", "{364AEF60-5F3A-498C-ACDC-6BC1019F5A27}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{C7BA8EA6-FB6F-4C13-A807-7ED2D0F34348}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTracker.Timesheet.Core", "TimeTracker.Timesheet.Core\TimeTracker.Timesheet.Core.csproj", "{E824A42B-307D-4BFD-AD0E-1885750ECBAF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTracker.Tsheet.Core", "TimeTracker.Tsheet.Core\TimeTracker.Tsheet.Core.csproj", "{E824A42B-307D-4BFD-AD0E-1885750ECBAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTracker.Tsheet.Data", "TimeTracker.Tsheet.Data\TimeTracker.Tsheet.Data.csproj", "{B443CC25-3A1D-48BA-BA7D-DBE36CC12737}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,6 +67,10 @@ Global
 		{E824A42B-307D-4BFD-AD0E-1885750ECBAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E824A42B-307D-4BFD-AD0E-1885750ECBAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E824A42B-307D-4BFD-AD0E-1885750ECBAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B443CC25-3A1D-48BA-BA7D-DBE36CC12737}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B443CC25-3A1D-48BA-BA7D-DBE36CC12737}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B443CC25-3A1D-48BA-BA7D-DBE36CC12737}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B443CC25-3A1D-48BA-BA7D-DBE36CC12737}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,11 +84,9 @@ Global
 		{85B5AF35-8759-4D44-8EA3-B813D72F0CFC} = {80906BEA-8727-4FC3-AC68-C6E9E6C877D8}
 		{C7BA8EA6-FB6F-4C13-A807-7ED2D0F34348} = {364AEF60-5F3A-498C-ACDC-6BC1019F5A27}
 		{E824A42B-307D-4BFD-AD0E-1885750ECBAF} = {364AEF60-5F3A-498C-ACDC-6BC1019F5A27}
+		{B443CC25-3A1D-48BA-BA7D-DBE36CC12737} = {C7BA8EA6-FB6F-4C13-A807-7ED2D0F34348}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9228537D-723D-4CEF-97B4-25F229803F75}
-	EndGlobalSection
-	GlobalSection(NDepend) = preSolution
-		Project = ".\TimeTracker.ndproj"
 	EndGlobalSection
 EndGlobal

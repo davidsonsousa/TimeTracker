@@ -1,4 +1,4 @@
-﻿namespace TimeTracker.Attendance.Core.Interfaces
+﻿namespace TimeTracker.Attend.Core.Interfaces
 {
     public interface IAttendanceRepository
     {

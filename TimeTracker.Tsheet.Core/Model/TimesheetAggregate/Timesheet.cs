@@ -4,7 +4,7 @@ using System.Linq;
 using TimeTracker.SharedKernel;
 using TimeTracker.SharedKernel.Enums;
 
-namespace TimeTracker.Timesheet.Core.Model.TimesheetAggregate
+namespace TimeTracker.Tsheet.Core.Model.TimesheetAggregate
 {
     public class Timesheet : Entity<Guid>
     {
