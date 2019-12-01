@@ -1,13 +1,15 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace TimeTracker.CompanyManagement.Core.Interfaces
 {
     public interface IRepository<TEntity> where TEntity : IEntity
     {
-        IEnumerable<TEntity> List();
-        TEntity GetById(int id);
-        void Insert(TEntity entity);
+        Task<IEnumerable<TEntity>> ListAsync();
+        Task<TEntity> GetByIdAsync(int id);
+        Task InsertAsync(TEntity entity);
         void Update(TEntity entity);
-        void Delete(int id);
+        Task DeleteAsync(int id);
+        Task SaveAsync();
     }
 }
