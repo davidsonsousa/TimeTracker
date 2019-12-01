@@ -33,9 +33,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Timesheet", "Timesheet", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{C7BA8EA6-FB6F-4C13-A807-7ED2D0F34348}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTracker.Tsheet.Core", "TimeTracker.Tsheet.Core\TimeTracker.Tsheet.Core.csproj", "{E824A42B-307D-4BFD-AD0E-1885750ECBAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeTracker.Tsheet.Core", "TimeTracker.Tsheet.Core\TimeTracker.Tsheet.Core.csproj", "{E824A42B-307D-4BFD-AD0E-1885750ECBAF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTracker.Tsheet.Data", "TimeTracker.Tsheet.Data\TimeTracker.Tsheet.Data.csproj", "{B443CC25-3A1D-48BA-BA7D-DBE36CC12737}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeTracker.Tsheet.Data", "TimeTracker.Tsheet.Data\TimeTracker.Tsheet.Data.csproj", "{B443CC25-3A1D-48BA-BA7D-DBE36CC12737}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTracker.API", "TimeTracker.API\TimeTracker.API.csproj", "{935238DB-BED0-47D1-9DC8-86D910337219}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +73,10 @@ Global
 		{B443CC25-3A1D-48BA-BA7D-DBE36CC12737}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B443CC25-3A1D-48BA-BA7D-DBE36CC12737}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B443CC25-3A1D-48BA-BA7D-DBE36CC12737}.Release|Any CPU.Build.0 = Release|Any CPU
+		{935238DB-BED0-47D1-9DC8-86D910337219}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{935238DB-BED0-47D1-9DC8-86D910337219}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{935238DB-BED0-47D1-9DC8-86D910337219}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{935238DB-BED0-47D1-9DC8-86D910337219}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
