@@ -4,7 +4,7 @@ using System.Linq;
 using TimeTracker.SharedKernel;
 using TimeTracker.SharedKernel.ValueObjects;
 
-namespace TimeTracker.Attend.Core.Model.AttendAggregate
+namespace TimeTracker.Attend.Core.Model.AttendanceAggregate
 {
     public class Attendance : Entity<Guid>
     {
