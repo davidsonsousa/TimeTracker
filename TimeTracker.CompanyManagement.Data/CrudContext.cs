@@ -12,6 +12,7 @@ namespace TimeTracker.CompanyManagement.Data
         public DbSet<Team> Teams { get; set; }
         public DbSet<User> Users { get; set; }
 
+        // TODO: Should I add the name of the connection here?
         public CrudContext()
         {
 
