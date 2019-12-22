@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TimeTracker.CompanyManagement.Core\TimeTracker.CompanyManagement.Core.csproj" />
   </ItemGroup>
 
 </Project>
