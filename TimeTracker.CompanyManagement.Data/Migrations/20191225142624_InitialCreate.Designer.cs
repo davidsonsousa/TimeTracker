@@ -152,7 +152,7 @@ namespace TimeTracker.CompanyManagement.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("TimeTracker.CompanyManagement.Core.Model.Branch", b =>
+            modelBuilder.Entity("TimeTracker.CompanyManagement.Core.Models.Branch", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -179,7 +179,7 @@ namespace TimeTracker.CompanyManagement.Data.Migrations
                     b.ToTable("Branches");
                 });
 
-            modelBuilder.Entity("TimeTracker.CompanyManagement.Core.Model.Company", b =>
+            modelBuilder.Entity("TimeTracker.CompanyManagement.Core.Models.Company", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -196,7 +196,7 @@ namespace TimeTracker.CompanyManagement.Data.Migrations
                     b.ToTable("Companies");
                 });
 
-            modelBuilder.Entity("TimeTracker.CompanyManagement.Core.Model.Holiday", b =>
+            modelBuilder.Entity("TimeTracker.CompanyManagement.Core.Models.Holiday", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -221,7 +221,7 @@ namespace TimeTracker.CompanyManagement.Data.Migrations
                     b.ToTable("Holidays");
                 });
 
-            modelBuilder.Entity("TimeTracker.CompanyManagement.Core.Model.Project", b =>
+            modelBuilder.Entity("TimeTracker.CompanyManagement.Core.Models.Project", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -248,7 +248,7 @@ namespace TimeTracker.CompanyManagement.Data.Migrations
                     b.ToTable("Projects");
                 });
 
-            modelBuilder.Entity("TimeTracker.CompanyManagement.Core.Model.Team", b =>
+            modelBuilder.Entity("TimeTracker.CompanyManagement.Core.Models.Team", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -275,7 +275,7 @@ namespace TimeTracker.CompanyManagement.Data.Migrations
                     b.ToTable("Teams");
                 });
 
-            modelBuilder.Entity("TimeTracker.CompanyManagement.Core.Model.User", b =>
+            modelBuilder.Entity("TimeTracker.CompanyManagement.Core.Models.User", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -370,7 +370,7 @@ namespace TimeTracker.CompanyManagement.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("TimeTracker.CompanyManagement.Core.Model.User", null)
+                    b.HasOne("TimeTracker.CompanyManagement.Core.Models.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -379,7 +379,7 @@ namespace TimeTracker.CompanyManagement.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("TimeTracker.CompanyManagement.Core.Model.User", null)
+                    b.HasOne("TimeTracker.CompanyManagement.Core.Models.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -394,7 +394,7 @@ namespace TimeTracker.CompanyManagement.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("TimeTracker.CompanyManagement.Core.Model.User", null)
+                    b.HasOne("TimeTracker.CompanyManagement.Core.Models.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -403,20 +403,20 @@ namespace TimeTracker.CompanyManagement.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("TimeTracker.CompanyManagement.Core.Model.User", null)
+                    b.HasOne("TimeTracker.CompanyManagement.Core.Models.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("TimeTracker.CompanyManagement.Core.Model.Branch", b =>
+            modelBuilder.Entity("TimeTracker.CompanyManagement.Core.Models.Branch", b =>
                 {
-                    b.HasOne("TimeTracker.CompanyManagement.Core.Model.Company", "Company")
+                    b.HasOne("TimeTracker.CompanyManagement.Core.Models.Company", "Company")
                         .WithMany("Branches")
                         .HasForeignKey("CompanyId");
 
-                    b.HasOne("TimeTracker.CompanyManagement.Core.Model.Team", null)
+                    b.HasOne("TimeTracker.CompanyManagement.Core.Models.Team", null)
                         .WithMany("Branches")
                         .HasForeignKey("TeamId");
 
@@ -451,42 +451,42 @@ namespace TimeTracker.CompanyManagement.Data.Migrations
                         });
                 });
 
-            modelBuilder.Entity("TimeTracker.CompanyManagement.Core.Model.Holiday", b =>
+            modelBuilder.Entity("TimeTracker.CompanyManagement.Core.Models.Holiday", b =>
                 {
-                    b.HasOne("TimeTracker.CompanyManagement.Core.Model.Branch", null)
+                    b.HasOne("TimeTracker.CompanyManagement.Core.Models.Branch", null)
                         .WithMany("Holidays")
                         .HasForeignKey("BranchId");
                 });
 
-            modelBuilder.Entity("TimeTracker.CompanyManagement.Core.Model.Project", b =>
+            modelBuilder.Entity("TimeTracker.CompanyManagement.Core.Models.Project", b =>
                 {
-                    b.HasOne("TimeTracker.CompanyManagement.Core.Model.Company", "Company")
+                    b.HasOne("TimeTracker.CompanyManagement.Core.Models.Company", "Company")
                         .WithMany("Projects")
                         .HasForeignKey("CompanyId");
 
-                    b.HasOne("TimeTracker.CompanyManagement.Core.Model.Team", null)
+                    b.HasOne("TimeTracker.CompanyManagement.Core.Models.Team", null)
                         .WithMany("Projects")
                         .HasForeignKey("TeamId");
                 });
 
-            modelBuilder.Entity("TimeTracker.CompanyManagement.Core.Model.Team", b =>
+            modelBuilder.Entity("TimeTracker.CompanyManagement.Core.Models.Team", b =>
                 {
-                    b.HasOne("TimeTracker.CompanyManagement.Core.Model.Branch", null)
+                    b.HasOne("TimeTracker.CompanyManagement.Core.Models.Branch", null)
                         .WithMany("Teams")
                         .HasForeignKey("BranchId");
 
-                    b.HasOne("TimeTracker.CompanyManagement.Core.Model.Project", null)
+                    b.HasOne("TimeTracker.CompanyManagement.Core.Models.Project", null)
                         .WithMany("Teams")
                         .HasForeignKey("ProjectId");
                 });
 
-            modelBuilder.Entity("TimeTracker.CompanyManagement.Core.Model.User", b =>
+            modelBuilder.Entity("TimeTracker.CompanyManagement.Core.Models.User", b =>
                 {
-                    b.HasOne("TimeTracker.CompanyManagement.Core.Model.Branch", null)
+                    b.HasOne("TimeTracker.CompanyManagement.Core.Models.Branch", null)
                         .WithMany("Employees")
                         .HasForeignKey("BranchId");
 
-                    b.HasOne("TimeTracker.CompanyManagement.Core.Model.Team", null)
+                    b.HasOne("TimeTracker.CompanyManagement.Core.Models.Team", null)
                         .WithMany("TeamMembers")
                         .HasForeignKey("TeamId");
                 });

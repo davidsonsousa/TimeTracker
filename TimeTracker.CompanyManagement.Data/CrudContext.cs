@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using TimeTracker.CompanyManagement.Core.Model;
+using TimeTracker.CompanyManagement.Core.Models;
 
 namespace TimeTracker.CompanyManagement.Data
 {

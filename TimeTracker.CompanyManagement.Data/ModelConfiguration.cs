@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using TimeTracker.CompanyManagement.Core.Model;
+using TimeTracker.CompanyManagement.Core.Models;
 
 namespace TimeTracker.CompanyManagement.Data
 {
