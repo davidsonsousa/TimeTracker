@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using TimeTracker.CompanyManagement.Core.Interfaces;
-using TimeTracker.CompanyManagement.Core.Model;
+using TimeTracker.CompanyManagement.Core.Models;
+using TimeTracker.CompanyManagement.Core.Modelss.ApiModels;
 
 namespace TimeTracker.API.Controllers.Crud
 {
@@ -35,19 +36,23 @@ namespace TimeTracker.API.Controllers.Crud
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody]Company company)
+        public async Task<IActionResult> Post([FromBody]CompanyApiModel companyApiModel)
         {
-            await _companyRepository.InsertAsync(company);
+            var companyToSave = new Company
+            {
+                Name = companyApiModel.Name
+            };
+            await _companyRepository.InsertAsync(companyToSave);
             await _companyRepository.SaveAsync();
             return Ok();
         }
 
         [HttpPut("{id:int}")]
-        public async Task<IActionResult> Put(int id, [FromBody]Company company)
+        public async Task<IActionResult> Put(int id, [FromBody]CompanyApiModel companyApiModel)
         {
             var companyToUpdate = await _companyRepository.GetByIdAsync(id);
-            companyToUpdate.Name = company.Name;
-            // TODO: Set update values for Branches and Projects
+            companyToUpdate.Name = companyApiModel.Name;
+            // TODO: Set update values for related entities
 
             _companyRepository.Update(companyToUpdate);
             await _companyRepository.SaveAsync();
