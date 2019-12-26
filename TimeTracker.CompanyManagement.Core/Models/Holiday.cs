@@ -1,7 +1,7 @@
 ﻿using System;
 using TimeTracker.CompanyManagement.Core.Interfaces;
 
-namespace TimeTracker.CompanyManagement.Core.Model
+namespace TimeTracker.CompanyManagement.Core.Models
 {
     public class Holiday : IEntity
     {
