@@ -51,6 +51,11 @@ namespace TimeTracker.API.Controllers.Crud
         public async Task<IActionResult> Put(int id, [FromBody]TeamApiModel teamApiModel)
         {
             var teamToUpdate = await _teamRepository.GetByIdAsync(id);
+            if (teamToUpdate == null)
+            {
+                return NotFound(id);
+            }
+
             teamToUpdate.Name = teamApiModel.Name;
             // TODO: Set update values for related entities
 

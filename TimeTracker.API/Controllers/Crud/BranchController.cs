@@ -55,6 +55,11 @@ namespace TimeTracker.API.Controllers.Crud
         public async Task<IActionResult> Put(int id, [FromBody]BranchApiModel branchApiModel)
         {
             var branchToUpdate = await _branchRepository.GetByIdAsync(id);
+            if (branchToUpdate == null)
+            {
+                return NotFound(id);
+            }
+
             branchToUpdate.Name = branchApiModel.Name;
             branchToUpdate.Address = new Address(branchApiModel.Street, branchApiModel.City, branchApiModel.State, branchApiModel.Country, branchApiModel.ZipCode);
             // TODO: Set update values for related entities
