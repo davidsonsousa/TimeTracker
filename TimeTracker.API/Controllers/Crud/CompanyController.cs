@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using TimeTracker.CompanyManagement.Core.Interfaces;
 using TimeTracker.CompanyManagement.Core.Models;
-using TimeTracker.CompanyManagement.Core.Modelss.ApiModels;
+using TimeTracker.CompanyManagement.Core.Models.ApiModels;
 
 namespace TimeTracker.API.Controllers.Crud
 {

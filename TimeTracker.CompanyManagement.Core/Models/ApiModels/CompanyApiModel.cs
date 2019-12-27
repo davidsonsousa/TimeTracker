@@ -1,4 +1,4 @@
-﻿namespace TimeTracker.CompanyManagement.Core.Modelss.ApiModels
+﻿namespace TimeTracker.CompanyManagement.Core.Models.ApiModels
 {
     public class CompanyApiModel
     {
