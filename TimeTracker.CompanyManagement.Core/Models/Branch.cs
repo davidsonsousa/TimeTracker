@@ -12,13 +12,8 @@ namespace TimeTracker.CompanyManagement.Core.Models
 
         public int CompanyId { get; set; }
         public Company Company { get; set; }
-        public ICollection<Team> Teams { get; set; }
+        public ICollection<BranchTeam> BranchTeams { get; set; }
         public ICollection<Holiday> Holidays { get; set; }
         public ICollection<User> Employees { get; set; }
-
-        public Branch()
-        {
-
-        }
     }
 }

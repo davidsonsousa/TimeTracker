@@ -8,13 +8,7 @@ namespace TimeTracker.CompanyManagement.Core.Models
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public List<Branch> Branches { get; set; }
-        public List<Project> Projects { get; set; }
-
-        public Company()
-        {
-            Branches = new List<Branch>();
-            Projects = new List<Project>();
-        }
+        public ICollection<Branch> Branches { get; set; }
+        public ICollection<Project> Projects { get; set; }
     }
 }
