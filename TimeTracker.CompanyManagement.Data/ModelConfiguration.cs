@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using TimeTracker.CompanyManagement.Core.Models;
 
 namespace TimeTracker.CompanyManagement.Data
@@ -18,7 +19,6 @@ namespace TimeTracker.CompanyManagement.Data
 
             // Relationships
             b.HasOne(model => model.Company);
-            b.HasMany(model => model.Teams);
             b.HasMany(model => model.Holidays);
             b.HasMany(model => model.Employees);
         }
@@ -56,8 +56,10 @@ namespace TimeTracker.CompanyManagement.Data
                 .IsRequired();
 
             // Relationships
-            b.HasOne(model => model.Company);
-            b.HasMany(model => model.Teams);
+            b.HasOne(model => model.Company)
+                .WithMany(model => model.Projects)
+                .HasForeignKey(model => model.CompanyId)
+                .OnDelete(DeleteBehavior.ClientNoAction);
         }
 
         public static void ConfigureTeam(EntityTypeBuilder<Team> b)
@@ -69,9 +71,19 @@ namespace TimeTracker.CompanyManagement.Data
                 .IsRequired();
 
             // Relationships
-            b.HasMany(model => model.Branches);
-            b.HasMany(model => model.Projects);
             b.HasMany(model => model.TeamMembers);
+        }
+
+        // Many to many
+
+        public static void ConfigureBranchTeam(EntityTypeBuilder<BranchTeam> b)
+        {
+            b.HasKey(model => new { model.BranchId, model.TeamId });
+        }
+
+        public static void ConfigureTeamProject(EntityTypeBuilder<TeamProject> b)
+        {
+            b.HasKey(model => new { model.TeamId, model.ProjectId });
         }
     }
 }

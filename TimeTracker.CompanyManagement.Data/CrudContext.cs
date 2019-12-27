@@ -24,6 +24,8 @@ namespace TimeTracker.CompanyManagement.Data
             builder.Entity<Holiday>(ModelConfiguration.ConfigureHoliday);
             builder.Entity<Project>(ModelConfiguration.ConfigureProject);
             builder.Entity<Team>(ModelConfiguration.ConfigureTeam);
+            builder.Entity<BranchTeam>(ModelConfiguration.ConfigureBranchTeam);
+            builder.Entity<TeamProject>(ModelConfiguration.ConfigureTeamProject);
 
             base.OnModelCreating(builder);
         }
